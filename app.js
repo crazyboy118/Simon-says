@@ -38,8 +38,8 @@ function playButtonSound(btnColor) {
     const frequencies = {
         yellow: 523.25,   
         red: 659.25,      
-        purple: 783.99,   
-        green: 1046.50    
+        purple: 783.99,  
+        green: 1046.50,   
     };
     
     playBeep(frequencies[btnColor] || 400, 200);
@@ -73,7 +73,6 @@ function stopBackgroundMusic() {
         backgroundGain = null;
     }
 }
-
 
 function playWrongSound() {
     stopBackgroundMusic();
@@ -154,7 +153,7 @@ function levelUp(){
     level++;
     h2.innerText = `Level ${level}`;
 
-    let randIdx = Math.floor(Math.random() * 3);
+    let randIdx = Math.floor(Math.random() * 4);
     let randColor = btns[randIdx];
     let randBtn = document.querySelector(`.${randColor}`);
     gameSeq.push(randColor);
@@ -168,15 +167,27 @@ function checkAns (idx) {
     }
    } else {
     playWrongSound();
-    setTimeout(function() {
-        playGameOverMusic();
-    }, 300);
-    h2.innerHTML = `Game Over! your score was <b>${level}</b> <br> press any key to start.`;
-    document.querySelector("body").style.backgroundColor = "red";
-    setTimeout(function(){
-        document.querySelector("body").style.backgroundColor = "white";
-        }, 150);
-        reset();
+    
+
+    let wrongBtn = document.querySelector(`.${userSeq[idx]}`);
+    let flashCount = 0;
+    let flashInterval = setInterval(function() {
+        if (flashCount < 6) {
+            wrongBtn.classList.add("flash");
+            setTimeout(function() {
+                wrongBtn.classList.remove("flash");
+            }, 250);
+            flashCount++;
+        } else {
+            clearInterval(flashInterval);
+            
+            setTimeout(function() {
+                playGameOverMusic();
+                h2.innerHTML = `Game Over! your score was <b>${level}</b> <br> press any key to start.`;
+                reset();
+            }, 300);
+        }
+    }, 350);
    }
 }
 function btnPress() {

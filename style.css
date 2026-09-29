@@ -114,6 +114,7 @@ h2 {
   }
 }
 
+
 .userflash {
   animation: userClick 0.25s ease !important;
 }
@@ -152,6 +153,7 @@ body.game-over {
   25% { transform: translateX(-10px); }
   75% { transform: translateX(10px); }
 }
+
 
 @keyframes slideDown {
   from {
