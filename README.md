@@ -1,10 +1,17 @@
-Simon Says Game
-A classic memory-based Simon Says game built using web technologies. Watch the sequence of lights and colors, repeat the pattern, and test how far your memory can take you!
+Simon Says
+
+Simon Says is an interactive memory game designed to mimic classic electronic pattern-matching games. Built entirely from scratch, it serves as a practical frontend project to practice handling DOM manipulation, managing dynamic UI states, and handling event listeners using vanilla JavaScript. The application lets users test their memory by following increasingly complex color sequences directly within the browser without needing any external backend or framework setup.
+
 Features
-Interactive Gameplay: Classic Simon Says color patterns and sounds/visual cues.
-Progressive Difficulty: The sequences get longer and faster as you successfully advance through levels.
-Responsive Design: Clean user interface built with HTML5, CSS3, and JavaScript.
-Built With
-HTML5: Game structure and layout (index.html)
-CSS3: Styling, animations, and responsive flexbox design (style.css)
-JavaScript: Game logic, event listeners, and sequence generation (app.js)
+
+Start the game with any keypress Watch and repeat dynamic color flashes Progressive difficulty levels that track your high score and level progression
+
+Folder Structure
+
+index.html : HTML structure for the game board and layout
+style.css : Styling and responsive animations for buttons and containers
+app.js : Core game logic, sequence generation, and input tracking
+
+How to Run
+
+Just download the whole project folder and open index.html in your browser.
