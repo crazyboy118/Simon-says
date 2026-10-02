@@ -16,6 +16,9 @@ How to Run
 
 Just download the whole project folder and open index.html in your browser.
 
+## Live Demo
+Check out the live game here: [Simon Says Live Link](https://simon-says-mauve.vercel.app/)
+
 ##  Project Screenshots
 
 * **Start Screen:**
