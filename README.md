@@ -19,10 +19,10 @@ Just download the whole project folder and open index.html in your browser.
 ##  Project Screenshots
 
 * **Start Screen:**
-  ![Start Screen](images/Screenshot-2026-10-02-at-5.59.45PM.png)
+  ![Start Screen](images/Screenshot2026-10-02-at-5.59.45PM.png)
 
 * **Gameplay:**
-  ![Gameplay](images/Screenshot-2026-10-02-at-6.00.56PM.png)
+  ![Gameplay](images/Screenshot2026-10-02-at-6.00.56PM.png)
 
 * **Game Over:**
-  ![Game Over](images/Screenshot-2026-10-02-at-6.01.22PM.png)
+  ![Game Over](images/Screenshot2026-10-02-at-6.01.22PM.png)
