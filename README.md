@@ -15,3 +15,14 @@ app.js : Core game logic, sequence generation, and input tracking
 How to Run
 
 Just download the whole project folder and open index.html in your browser.
+
+##  Project Screenshots
+
+* **Start Screen:**
+  ![Start Screen](images/Screenshot-2026-10-02-at-5.59.45-PM.png)
+
+* **Gameplay:**
+  ![Gameplay](images/Screenshot-2026-10-02-at-6.00.56-PM.png)
+
+* **Game Over:**
+  ![Game Over](images/Screenshot-2026-10-02-at-6.01.22-PM.png)
