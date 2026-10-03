@@ -1,12 +1,15 @@
 let gameSeq = [];
 let userSeq = [];
-
-let btns = ["yellow", "red", "purple", "green"];
-
+let btns = ["btn1", "btn2", "btn3", "btn4", "btn5", "btn6"];
 let started = false; 
 let level = 0;
+let highScore = localStorage.getItem("highScore") || 0;
 
 let h2 = document.querySelector("h2");
+let highScoreDisplay = document.querySelector("#highScore");
+
+highScoreDisplay.innerText = highScore;
+
 document.addEventListener("keypress", function(){
 
     if (started == false) {
@@ -39,9 +42,9 @@ function levelUp(){
     level++;
     h2.innerText = `Level ${level}`;
 
-    let randIdx = Math.floor(Math.random() * 4);
+    let randIdx = Math.floor(Math.random() * 6);
     let randColor = btns[randIdx];
-    let randBtn = document.querySelector(`.${randColor}`);
+    let randBtn = document.querySelector(`#${randColor}`);
     gameSeq.push(randColor);
 
     gameFlash(randBtn);
@@ -53,8 +56,7 @@ function checkAns(idx) {
         setTimeout(levelUp, 1000);
     }
    } else {
-
-    let wrongBtn = document.querySelector(`.${userSeq[idx]}`);
+    let wrongBtn = document.querySelector(`#${userSeq[idx]}`);
     
     for(let i = 0; i < 3; i++) {
         setTimeout(function() {
@@ -67,7 +69,15 @@ function checkAns(idx) {
     }
     
     setTimeout(function() {
-        h2.innerHTML = `Game Over! your score was <b>${level}</b> <br> press any key to start.`;
+      
+        if (level > highScore) {
+            highScore = level;
+            localStorage.setItem("highScore", highScore);
+            highScoreDisplay.innerText = highScore;
+            h2.innerHTML = `Game Over! Your score was <b>${level}</b> <br> New High Score! 🎉 <br> press any key to start.`;
+        } else {
+            h2.innerHTML = `Game Over! your score was <b>${level}</b> <br> High Score: <b>${highScore}</b> <br> press any key to start.`;
+        }
         reset();
     }, 700);
    }
@@ -89,11 +99,20 @@ for (let btn of allBtns) {
     btn.addEventListener("click", btnPress);
 }
 
+let resetBtn = document.querySelector("#resetBtn");
+
+resetBtn.addEventListener("click", function() {
+    highScore = 0;
+    localStorage.removeItem("highScore");
+    highScoreDisplay.innerText = 0;
+    alert("High Score Reset!");
+});
+
 function reset() {
     started = false;
     gameSeq = [];
     userSeq = [];
     level = 0;
-
+    
 }
 
