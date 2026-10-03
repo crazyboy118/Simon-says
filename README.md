@@ -16,16 +16,16 @@ How to Run
 
 Just download the whole project folder and open index.html in your browser.
 
-## Live Demo
+live demo
 Check out the live game here: [Simon Says Live Link](https://simon-says-mauve.vercel.app/)
 
-##  Project Screenshots
+project screenshot
 
-* **Start Screen:**
+* start
   ![Start Screen](images/start.png)
 
-* **Gameplay:**
+* game play
   ![Gameplay](images/gameplay.png)
 
-* **Game Over:**
+* game over
   ![Game Over](images/gameover.png)
